@@ -47,7 +47,12 @@ Step 0: Getting Started
 
 First, create a *~/cs20/lab08* directory in the usual manner.
 
-@@@@@@@@@@@@@@@@ links @@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@ links @@@@@@@@@@@@@@@@@@
+@@@ Seems like too many files to have them copy from github
+@@@ Most probably not working from CSIL. Only need scp instructions probably
+@@@ Need to update the CS8 and S14 parts
+@@@ Also update location to CS20 S16 folder
+
 You'll then need to copy all of the files from this web page into your directory:
 
 -   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code>
@@ -67,11 +72,11 @@ If all else fails, you can visit this web page and download them one at a time u
 -   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code>
     -   Note that if you use the one file at a time method, you also will need a subdirectory called "tests", and it will need to have all of the files shown in tests in it. So this method is not recommended.
 
-The starting point code is in the file lab08Funcs.py.
+The starting point code is in the file `lab08Funcs.py`.
 
-The file lab08Tests.py runs our tests, but this week the actual tests are in .txt files stored in the subdirectory called tests.
+The file `lab08Tests.py` runs our tests, but this week the actual tests are in `.txt` files stored in the subdirectory called tests.
 
-This week, there are so many tests that to make them easier to read, we wrote them in "docstring" style, and separated them out into separate files, one for each function. We then have a file call allTests.txt that contains all of the tests for all eight functions. You'll see the code at the end of the lab08Tests.py code that loads the tests from a file.
+This week, there are so many tests that to make them easier to read, we wrote them in "docstring" style, and separated them out into separate files, one for each function. We then have a file call `allTests.txt` that contains all of the tests for all eight functions. You'll see the code at the end of the `lab08Tests.py` code that loads the tests from a file.
 
 Step 1: Read through the comments, code and test cases in the ENTIRE file first
 -------------------------------------------------------------------------------
@@ -80,16 +85,17 @@ Before you jump in, just read through the ENTIRE file from start to finish. Read
 
 You can read through the code by loading it into IDLE, or just look at it on the web here:
 
+@@@@@@@@@@@@@@@@@@@@@@@@ Links again @@@@@@@@@@@@@@@@@@@@@@
 -   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code/lab08Funcs.py>
 -   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code/lab08Tests.py>
 
-Look through the tests too. It may help to look at the tests along with each function from lab08Funcs.py
+Look through the tests too. It may help to look at the tests along with each function from `lab08Funcs.py`.
 
 -   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code/tests>
 
 Find the stubs. These are the places where you'll be adding code in Step 2. But don't just jump in and start coding yet.
 
-As you find things you don't understand, ask the TA or the instructor, or make a note to do so during class or office hours.
+As you find things you don't understand, ask the instrcutor about them, or make a note to do so during class or office hours.
 
 Only after you've read the entire file through—and you understand the big picture—proceed to step 2.
 
@@ -104,16 +110,16 @@ What NOT do to...
 
 There can be a temptation to make your test cases pass by changing them to the answer your function returns, even if it is wrong, but that is not permitted—in fact, it is a kind of academic dishonesty.
 
-So, don't change any of the test cases, unless you have permission of the TA/Instructor. (This should only be done if we determine that there is an error in the test cases provided.) When all the test cases pass...
+So, don't change any of the test cases, unless you have permission of the Instructor. (This should only be done if we determine that there is an error in the test cases provided.) When all the test cases pass...
 
-When your file contains all the functions and test cases from the original lab08StartingPoint.py, and all the tests pass, you are finished!
+When your file contains all the functions and test cases from the original lab08 starting point, and all the tests pass, you are finished!
 
 Step 3: Submitting via turnin
 -----------------------------
 
 Before submitting:
 
--   Change the header comment in lab08Funcs.py in the normal way (e.g. put in your name and your pair partner's name)
+-   Change the header comment in `lab08Funcs.py` in the normal way (e.g. put in your name and your pair partner's name)
 -   Remove all comment lines with @@@ in them (those are just instructions to help you complete the exercise)
 -   Review the grading rubric below
 
