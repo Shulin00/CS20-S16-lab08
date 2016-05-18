@@ -31,11 +31,11 @@ Thus we introduce two more heuristics: ones to try to remove silent e from words
 
 The comments in the sample code discuss these heuristics. Be sure to read the comments carefully. They are there to help you make sense of the functions, and how the heuristics were developed.
 
-As you'll see the addition of the silent e and ed removal heuristics improve our syllable counting, but there are still words on which these techniques fail. (The word "techniques" is one example). If we had more time in the quarter, we'd extend this exercise to challenge you to come up with additional heuristics to make our syllable counting technique even more accurate.
+As you'll see the addition of the silent e and -ed removal heuristics improve our syllable counting, but there are still words on which these techniques fail. (The word "techniques" is one example). If we had more time in the quarter, we'd extend this exercise to challenge you to come up with additional heuristics to make our syllable counting technique even more accurate.
 
 As it is, there are still some challenges for you—applying the techniques of writing recursive functions for lists to this syllable counting problem. So, for this exercise, stick to the heuristics given.
 
-If you want to experiment with additional heuristics, just for fun as a challenge to yourself, then finish the exercise as given first in a file called lab08.py. Then make a separate copy called lab08\_v2.py, in which you experiment with your additional heuristics. You can then include both when you submit.
+If you want to experiment with additional heuristics, just for fun as a challenge to yourself, then finish the exercise as given first in a file called `lab08.py`. Then make a separate copy called `lab08_v2.py`, in which you experiment with your additional heuristics. You can then include both when you submit.
 
 Note that working on additional heuristics for the spelling problem, while not required for this exercise, is an excellent way to study for the exam. Just like with swimming or playing the guitar, the more you do it, the better you will get at it. What we are learning in this class is not primarily a collect of facts, but a new way of thinking, and you need to practice that way of thinking to improve.
 
@@ -45,8 +45,9 @@ Step by Step Instructions
 Step 0: Getting Started
 -----------------------
 
-First, create a ~/cs8/lab08 directory in the usual manner.
+First, create a *~/cs20/lab08* directory in the usual manner.
 
+@@@@@@@@@@@@@@@@ links @@@@@@@@@@@@@@@@
 You'll then need to copy all of the files from this web page into your directory:
 
 -   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code>
