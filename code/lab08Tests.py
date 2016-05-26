@@ -1,20 +1,15 @@
-# lab08Tests.py    Syllable Counting, for CS8, Spring 2014
-# P. Conrad, UCSB CS Department.
-# tests come from files in a subdirectory called "tests"
+# lab08Tests.py    Tests for lab08, UCSB CS8, P. Conrad, 5/26/2016
 
-if __name__ == "__main__":
-   import doctest
-   from lab08Funcs import *
+import unittest            
+from lab08Funcs import *   
 
-   # @@@ UNCOMMENT THESE ONE AT A TIME TO GET THE TESTS TO PASS.
-   # @@@ WHEN YOU ARE FINISHED, LEAVE ONLY THE "allTests.txt" line uncommented.
+class TestLab08Functions(unittest.TestCase): 
 
-   doctest.testfile("tests/noConsecDupsTests.txt", verbose=True)
-   #doctest.testfile("tests/isVowelTests.txt", verbose=True)
-   #doctest.testfile("tests/countVowelsTests.txt", verbose=True)
-   #doctest.testfile("tests/allVowelsATests.txt", verbose=True)
-   #doctest.testfile("tests/syllableHelperTests.txt", verbose=True)
-   #doctest.testfile("tests/removeSilentETests.txt", verbose=True)
-   #doctest.testfile("tests/removeEdWhenNotASyllableTests.txt", verbose=True)
-   #doctest.testfile("tests/countSyllablesTests.txt", verbose=True)
-   #doctest.testfile("tests/allTests.txt", verbose=True)
+    # TODO: Run all of the various tests
+
+    
+if __name__ == '__main__':
+
+    # To run ALL tests, uncomment the "unittest.main(exit=False)" line
+    unittest.main(exit=False)  
+
