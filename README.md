@@ -45,38 +45,57 @@ Step by Step Instructions
 Step 0: Getting Started
 -----------------------
 
-First, create a *~/cs20/lab08* directory in the usual manner.
+Step 0a: Create Private Repo
+-----------------------
 
-@@@@@@@@@@@@@@@@@ links @@@@@@@@@@@@@@@@@@
-@@@ Seems like too many files to have them copy from github
-@@@ Most probably not working from CSIL. Only need scp instructions probably
-@@@ Need to update the CS8 and S14 parts
-@@@ Also update location to CS20 S16 folder
 
-You'll then need to copy all of the files from this web page into your directory:
+First, create a private repo called CS20-S16-lab08.
 
--   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code>
+* Specify that you want a README.md
+* Specify that you want a .gitignore for Python
+* Don't worry about a LICENSE---its ok to have, or not have one.
+ 
+You can create this either on github.com or github.ucsb.edu
 
-If you are working on CSIL, you can copy both into your current directory with the following Unix command. Note the . at the end of the command, which is separated from the filename by a space—the command will not work without this dot, which stands for "current directory".
+Step 0b: Add Collaborators
+-----------------------
 
-`cp -r /cs/faculty/pconrad/public_html/cs8/14S/labs/lab08/code/* .`
 
-If you are working on your own computer, you can use an secure copy client to copy these. On Mac and Linux it can be done at the command line:
+Then, add `pconrad` and `sarahmzhong` as collaborators.
 
-`scp -r yourusername@csil.cs.ucsb.edu:/cs/faculty/pconrad/public_html/cs8/14S/labs/lab08/code/* .`
+Step 0c: Clone repo 
+-----------------------
 
-Or, on Windows, use a program such as WinSCP.
 
-If all else fails, you can visit this web page and download them one at a time using "Save As", though that will be tedious.
+Then, clone the repo on either CSIL or your own machine (either way is fine.)
 
--   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code>
-    -   Note that if you use the one file at a time method, you also will need a subdirectory called "tests", and it will need to have all of the files shown in tests in it. So this method is not recommended.
+Step 0d: Add remote for starter code and pull 
+-----------------------
 
-The starting point code is in the file `lab08Funcs.py`.
+To add a remote for the starter code, do this:
 
-The file `lab08Tests.py` runs our tests, but this week the actual tests are in `.txt` files stored in the subdirectory called tests.
+ git remote add starter https://github.com/UCSB-CMPTGCS20-S16/CS20-S16-lab08
 
-This week, there are so many tests that to make them easier to read, we wrote them in "docstring" style, and separated them out into separate files, one for each function. We then have a file call `allTests.txt` that contains all of the tests for all eight functions. You'll see the code at the end of the `lab08Tests.py` code that loads the tests from a file.
+Then, do a `git pull starter master`
+
+You may have a merge conflict in the README.md file.
+
+To deal with those:
+
+* edit the `README.md`  with a text editor (Notepad, TextEdit, nano, etc.) to remove the `<<<< HEAD`, `=====` and `>>>>> hex-number here ` lines, and fix up the file to something reasonable.
+* `git add README.md`  
+* `git commit -m 'fix merge conflict on README.md'`
+* `git push origin master`
+
+You should then have a clean repo with a `code` subdirectory containing:
+
+* lab08Funcs.py (stubs)
+* lab08DocTests.py (the file that controls testing)
+* tests subdirectory, containing your tests
+
+For this lab, there are so many tests that to make them easier to read, we wrote them in "docstring" style, and separated them out into separate files, one for each function. We then have a file call `allTests.txt` that contains all of the tests for all eight functions. You'll see the code at the end of the `lab08DocTests.py` code that loads the tests from a file.
+
+This is a different style of testing.  We'll discuss this in lecture.
 
 Step 1: Read through the comments, code and test cases in the ENTIRE file first
 -------------------------------------------------------------------------------
@@ -85,13 +104,10 @@ Before you jump in, just read through the ENTIRE file from start to finish. Read
 
 You can read through the code by loading it into IDLE, or just look at it on the web here:
 
-@@@@@@@@@@@@@@@@@@@@@@@@ Links again @@@@@@@@@@@@@@@@@@@@@@
--   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code/lab08Funcs.py>
--   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code/lab08Tests.py>
+
+https://github.com/UCSB-CMPTGCS20-S16/CS20-S16-lab08/tree/master/code
 
 Look through the tests too. It may help to look at the tests along with each function from `lab08Funcs.py`.
-
--   <http://www.cs.ucsb.edu/~pconrad/cs8/14S/labs/lab08/code/tests>
 
 Find the stubs. These are the places where you'll be adding code in Step 2. But don't just jump in and start coding yet.
 
@@ -114,32 +130,14 @@ So, don't change any of the test cases, unless you have permission of the Instru
 
 When your file contains all the functions and test cases from the original lab08 starting point, and all the tests pass, you are finished!
 
-Step 3: Submitting via turnin
+Step 3: Submitting via submit
 -----------------------------
 
-Before submitting:
+You'll see two submission opportunities here.  
 
--   Change the header comment in `lab08Funcs.py` in the normal way (e.g. put in your name and your pair partner's name)
--   Remove all comment lines with @@@ in them (those are just instructions to help you complete the exercise)
--   Review the grading rubric below
+* [lab08](https://submit.cs.ucsb.edu/form/project/493/submission) runs ALL the tests all at once.
+* [lab08a](https://submit.cs.ucsb.edu/form/project/494/submission) runs the tests in individual groups, so you can get partial credit
 
-Evaluation and Grading (300 points)
-===================================
-
-Grading Rubric:
-
-| Function                   | Item                                                                          | Points   |
-|----------------------------|-------------------------------------------------------------------------------|----------|
-| all                        | Naming and submitting your file correctly, and submitting on time.            | (30 pts) |
-| all                        | Fixing the header comment in the lab08Funcs.py file                           | (10 pts) |
-| all                        | Code style overall(variable names, comments, etc, removing all the @@@ lines) | (20 pts) |
-| noConsecDups()             | correctness of code                                                           | (30 pts) |
-| isVowel()                  | correctness of code                                                           | (30 pts) |
-| countVowels()              | correctness of code                                                           | (30 pts) |
-| allVowelsA()               | correctness of code                                                           | (30 pts) |
-| syllableHelper()           | correctness of code                                                           | (30 pts) |
-| removeSilentE()            | correctness of code                                                           | (30 pts) |
-| removeEdWhenNotASyllable() | correctness of code                                                           | (30 pts) |
-| countSyllables()           | correctness of code                                                           | (30 pts) |
+You may submit to either or both.  If you get a clean green output on either, you are done!
 
 
