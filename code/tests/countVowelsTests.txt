@@ -1,0 +1,40 @@
+   >>> from lab08Funcs import *
+
+Tests for countVowels
+
+   >>> countVowels("pwn")
+   0
+   >>> countVowels("pwned")
+   1
+   >>> countVowels("We")
+   1
+   >>> countVowels("hold")
+   1
+   >>> countVowels("these")
+   2
+   >>> countVowels("truths")
+   1
+   >>> countVowels("to")
+   1
+   >>> countVowels("be")
+   1
+   >>> countVowels("self")
+   1
+   >>> countVowels("evident")
+   3
+   >>> countVowels("Go Gauchos")
+   4
+   >>> countVowels("bee")
+   2
+   >>> countVowels("Hawaii")
+   4
+   >>> 
+
+If the parameter isn't a string, then return False
+
+   >>> countVowels(0)
+   False
+   >>> countVowels(["a"])
+   False
+   >>>
+

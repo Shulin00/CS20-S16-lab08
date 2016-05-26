@@ -1,0 +1,40 @@
+   >>> from lab08Funcs import *
+
+Tests for allVowelsA:
+
+   >>> allVowelsA("")
+   ''
+   >>> allVowelsA("pwn")
+   'pwn'
+   >>> allVowelsA("pwned")
+   'pwnad'
+   >>> allVowelsA("pone")
+   'pana'
+   >>> allVowelsA("We")
+   'Wa'
+   >>> allVowelsA("hold")
+   'hald'
+   >>> allVowelsA("these")
+   'thasa'
+   >>> allVowelsA("be")
+   'ba'
+   >>> allVowelsA("self")
+   'salf'
+   >>> allVowelsA("defenestrate")
+   'dafanastrata'
+   >>> allVowelsA("independence")
+   'andapandanca'
+   >>> allVowelsA("people")
+   'paapla'
+   >>> allVowelsA("fruition")
+   'fraataan'
+   >>>
+
+Error cases for allVowelsA
+
+   >>> allVowelsA(0)
+   False
+   >>> allVowelsA(['a'])
+   False
+   >>>
+

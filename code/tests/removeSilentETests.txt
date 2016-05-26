@@ -1,0 +1,56 @@
+   >>> from lab08Funcs import *
+
+Tests for removeSilentE:
+
+                
+   >>> removeSilentE("")
+   ''
+   >>> removeSilentE("pwn")
+   'pwn'
+   >>> removeSilentE("pwned")
+   'pwned'
+   >>> removeSilentE("pone")
+   'pon'
+   >>> removeSilentE("role")
+   'rol'
+   >>> removeSilentE("We")
+   'We'
+   >>> removeSilentE("hold")
+   'hold'
+   >>> removeSilentE("these")
+   'thes'
+   >>> removeSilentE("be")
+   'be'
+   >>> removeSilentE("self")
+   'self'
+   >>> removeSilentE("defenestrate")
+   'defenestrat'
+   >>> removeSilentE("independence")
+   'independenc'
+
+Next up, tests where our heuristic does the wrong thing.  If you can
+come up with a better heuristic---one that passes the tests above, but
+passes these tests when we replace the non-silent e's below
+(i.e. removeSilentE('castle') produces 'castle', ] then you are a
+star---a genius progammer!  (Note that just putting in special cases
+for these four words doesn't count---you need to come up with a
+"general rule" that works for all situations like this---perhaps
+something dealing with words that have a consonant, then an l, then an e?
+                     
+   >>> removeSilentE("castle")
+   'castl'
+   >>> removeSilentE("muscle")
+   'muscl'
+   >>> removeSilentE("chronicle")
+   'chronicl'
+   >>> removeSilentE("people")
+   'peopl'
+                     
+
+If we pass in something other than a string to removeSilentE, it should return False
+
+       >>> removeSilentE(0)
+       False
+       >>> removeSilentE(['a'])
+       False
+
