@@ -72,9 +72,11 @@ Then, clone the repo on either CSIL or your own machine (either way is fine.)
 Step 0d: Add remote for starter code and pull 
 -----------------------
 
+Now we want to add some starter code from https://github.com/UCSB-CMPTGCS20-S16/CS20-S16-lab08. We'll use the HTTPS remote URL, but you could use the SSH remote URL if you like. Remember, these are the same URLs we use to clone a repo.
+
 To add a remote for the starter code, do this:
 
- git remote add starter https://github.com/UCSB-CMPTGCS20-S16/CS20-S16-lab08
+`git remote add starter https://github.com/UCSB-CMPTGCS20-S16/CS20-S16-lab08.git`
 
 Then, do a `git pull starter master`
 
