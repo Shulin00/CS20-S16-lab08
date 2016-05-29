@@ -1,0 +1,31 @@
+   >>> from lab08Funcs import *
+
+Tests for syllableHelper:
+
+   >>> syllableHelper("")
+   ''
+   >>> syllableHelper("Guards")
+   'Gards'
+   >>> syllableHelper("people")
+   'papla'
+   >>> syllableHelper("fruition")
+   'fratan'
+   >>> syllableHelper("Gauchos")
+   'Gachas'
+   >>> syllableHelper("by")
+   'ba'
+   >>> syllableHelper("buy")
+   'ba'
+   >>> syllableHelper("low")
+   'law'
+   >>> syllableHelper("Audry")
+   'adra'
+   >>>
+
+Error Cases for syllableHelper
+          
+   >>> syllableHelper(0)
+   False
+   >>> syllableHelper(['a'])
+   False
+   >>>

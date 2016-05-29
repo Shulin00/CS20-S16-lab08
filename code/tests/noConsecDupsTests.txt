@@ -1,0 +1,45 @@
+   >>> from lab08Funcs import *
+
+noConsecDups should work on lists
+
+   >>> noConsecDups([])
+   []
+   >>> noConsecDups([1])
+   [1]
+   >>> noConsecDups([2,2])
+   [2]
+   >>> noConsecDups([1,2,3])
+   [1, 2, 3]
+   >>> noConsecDups([1,1,2,2,3,3])
+   [1, 2, 3]
+   >>> noConsecDups([3,3,2,1,1,4,5,5,6,7,7,7,8])
+   [3, 2, 1, 4, 5, 6, 7, 8]
+
+noConsecDups should works on lists of strings too:
+
+   >>> noConsecDups(['a','a','b','d','f','f','g'])
+   ['a', 'b', 'd', 'f', 'g']
+   >>> noConsecDups(['adam','adam','bravo','adam','frank','frank'])
+   ['adam', 'bravo', 'adam', 'frank']
+   >>>
+ 
+And it should work on strings:
+
+   >>> noConsecDups('aabdffg')
+   'abdfg'
+   >>> noConsecDups('')
+   ''
+   >>> noConsecDups('aabbaabb')
+   'abab'
+
+noConsecDups returns ints, floats, and booleans unchanged
+
+   >>> noConsecDups(1)
+   1
+   >>> noConsecDups(1.25)
+   1.25
+   >>> noConsecDups(False)
+   False
+   >>> noConsecDups(True)
+   True
+   >>>

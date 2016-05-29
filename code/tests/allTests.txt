@@ -1,0 +1,424 @@
+   >>> from lab08Funcs import *
+
+Tests for allVowelsA:
+
+   >>> allVowelsA("")
+   ''
+   >>> allVowelsA("pwn")
+   'pwn'
+   >>> allVowelsA("pwned")
+   'pwnad'
+   >>> allVowelsA("pone")
+   'pana'
+   >>> allVowelsA("We")
+   'Wa'
+   >>> allVowelsA("hold")
+   'hald'
+   >>> allVowelsA("these")
+   'thasa'
+   >>> allVowelsA("be")
+   'ba'
+   >>> allVowelsA("self")
+   'salf'
+   >>> allVowelsA("defenestrate")
+   'dafanastrata'
+   >>> allVowelsA("independence")
+   'andapandanca'
+   >>> allVowelsA("people")
+   'paapla'
+   >>> allVowelsA("fruition")
+   'fraataan'
+   >>>
+
+Error cases for allVowelsA
+
+   >>> allVowelsA(0)
+   False
+   >>> allVowelsA(['a'])
+   False
+   >>>
+
+
+Tests for countSyllables
+
+   >>> countSyllables("")
+   0
+   >>> countSyllables("pwned")
+   1
+   >>> countSyllables("pone")
+   1
+   >>> countSyllables("poned")
+   1
+   >>>
+                             
+   >>> countSyllables("We")
+   1
+   >>> countSyllables("hold")
+   1
+   >>> countSyllables("these")
+   1
+   >>> countSyllables("truths")
+   1
+   >>> countSyllables("to")
+   1
+   >>> countSyllables("be")
+   1
+   >>> countSyllables("self")
+   1
+   >>> countSyllables("evident")
+   3
+   >>> countSyllables("equal")
+   2
+   >>> countSyllables("endowed")
+   2
+   >>> countSyllables("secure")
+   2
+   >>> countSyllables("governments")
+   3
+   >>> countSyllables("among")
+   2
+   >>> countSyllables("deriving")
+   3
+   >>> countSyllables("established")
+   3
+   >>> countSyllables("by")
+   1
+   >>> countSyllables("consent")
+   2
+   >>> countSyllables("governed")
+   2
+   >>> countSyllables("wed")
+   1
+   >>> countSyllables("bed")
+   1
+   >>> countSyllables("tried")
+   1
+   >>>
+                 
+# Examples where the heuristic fails to produce the correct answer
+
+   >>> countSyllables("pwn")    # should be 1
+   0
+   >>> countSyllables("embed")  # should be 2
+   1
+   >>> countSyllables("created")  # should be 3
+   1
+   >>> countSyllables("busted")   # should be 2
+   1
+   >>> countSyllables("instituted") # should be 4
+   3
+   >>> countSyllables("creator")   # should be 3
+   2
+   >>> countSyllables("alien")   # should be 3
+   2
+   >>> countSyllables("unalienable")  # should be 6
+   4
+   >>> countSyllables("likely")   # should be 2
+   3
+   >>> countSyllables("States")   # should be 1
+   2
+   >>>
+
+Error cases for countSyllabes
+
+   >>> countSyllables(0)
+   False
+   >>> countSyllables(['a'])
+   False
+                 
+
+
+Tests for countVowels
+
+   >>> countVowels("pwn")
+   0
+   >>> countVowels("pwned")
+   1
+   >>> countVowels("We")
+   1
+   >>> countVowels("hold")
+   1
+   >>> countVowels("these")
+   2
+   >>> countVowels("truths")
+   1
+   >>> countVowels("to")
+   1
+   >>> countVowels("be")
+   1
+   >>> countVowels("self")
+   1
+   >>> countVowels("evident")
+   3
+   >>> countVowels("Go Gauchos")
+   4
+   >>> countVowels("bee")
+   2
+   >>> countVowels("Hawaii")
+   4
+   >>> 
+
+If the parameter isn't a string, then return False
+
+   >>> countVowels(0)
+   False
+   >>> countVowels(["a"])
+   False
+   >>>
+
+
+Tests for isVowel
+
+lower and uppercase aeiou and y should return True
+
+   >>> isVowel('a')
+   True
+   >>> isVowel('e')
+   True
+   >>> isVowel('i')
+   True
+   >>> isVowel('o')
+   True
+   >>> isVowel('u')
+   True
+   >>> isVowel('y')
+   True
+   >>> isVowel('A')
+   True
+   >>> isVowel('E')
+   True
+   >>> isVowel('I')
+   True
+   >>> isVowel('O')
+   True
+   >>> isVowel('U')
+   True
+   >>> isVowel('Y')
+   True
+   >>>
+
+But single letters other than aeiou and y, upper and lower case,
+should return False
+
+   >>> isVowel('b')
+   False
+   >>> isVowel('c')
+   False
+   >>> isVowel('d')
+   False
+   >>> isVowel('f')
+   False
+   >>> isVowel('g')
+   False
+   >>> isVowel('H')
+   False
+   >>> isVowel('J')
+   False
+   >>> isVowel('K')
+   False
+   >>> isVowel('!')
+   False
+   >>> isVowel(' ')
+   False
+   >>> isVowel('?')
+   False
+   >>> isVowel('*')
+   False
+   >>>
+
+But strings of length zero or greater than 1, and things that are not strings should return 'error'
+
+     >>> isVowel('')
+     'error'
+     >>> isVowel('aa')
+     'error'
+     >>> isVowel('ab')
+     'error'
+     >>> isVowel('ab')
+     'error'
+     >>> isVowel(0)
+     'error'
+     >>> isVowel(['a'])
+     'error'
+     >>>
+
+
+noConsecDups should work on lists
+
+   >>> noConsecDups([])
+   []
+   >>> noConsecDups([1])
+   [1]
+   >>> noConsecDups([2,2])
+   [2]
+   >>> noConsecDups([1,2,3])
+   [1, 2, 3]
+   >>> noConsecDups([1,1,2,2,3,3])
+   [1, 2, 3]
+   >>> noConsecDups([3,3,2,1,1,4,5,5,6,7,7,7,8])
+   [3, 2, 1, 4, 5, 6, 7, 8]
+
+noConsecDups should works on lists of strings too:
+
+   >>> noConsecDups(['a','a','b','d','f','f','g'])
+   ['a', 'b', 'd', 'f', 'g']
+   >>> noConsecDups(['adam','adam','bravo','adam','frank','frank'])
+   ['adam', 'bravo', 'adam', 'frank']
+   >>>
+ 
+And it should work on strings:
+
+   >>> noConsecDups('aabdffg')
+   'abdfg'
+   >>> noConsecDups('')
+   ''
+   >>> noConsecDups('aabbaabb')
+   'abab'
+
+noConsecDups returns ints, floats, and booleans unchanged
+
+   >>> noConsecDups(1)
+   1
+   >>> noConsecDups(1.25)
+   1.25
+   >>> noConsecDups(False)
+   False
+   >>> noConsecDups(True)
+   True
+   >>>
+
+
+Tests for removeEdWhenNotASyllable
+                 
+   >>> removeEdWhenNotASyllable('')
+   ''
+   >>> removeEdWhenNotASyllable('pwn')
+   'pwn'
+   >>> removeEdWhenNotASyllable('pwned')
+   'pwned'
+   >>> removeEdWhenNotASyllable('pone')
+   'pone'
+   >>> removeEdWhenNotASyllable('poned')
+   'pon'
+   >>> removeEdWhenNotASyllable('established')
+   'establish'
+   >>> removeEdWhenNotASyllable('by')
+   'by'
+   >>> removeEdWhenNotASyllable('consent')
+   'consent'
+   >>> removeEdWhenNotASyllable('governed')
+   'govern'
+   >>> removeEdWhenNotASyllable('wed')
+   'wed'
+   >>> removeEdWhenNotASyllable('bed')
+   'bed'
+   >>> removeEdWhenNotASyllable('tried')
+   'tried'
+   >>>
+
+Tests that show where the heuristic fails by removing ed when we would rather keep it
+
+   >>> removeEdWhenNotASyllable("embed")
+   'emb'
+   >>> removeEdWhenNotASyllable("created")
+   'creat'
+   >>> removeEdWhenNotASyllable("busted")
+   'bust'
+   >>> removeEdWhenNotASyllable("instituted")
+   'institut'
+   >>> removeEdWhenNotASyllable("connected")
+   'connect'
+
+Tests for bad input
+
+   >>> removeEdWhenNotASyllable(0)
+   False
+   >>> removeEdWhenNotASyllable(['a'])
+   False
+
+
+Tests for removeSilentE:
+
+                
+   >>> removeSilentE("")
+   ''
+   >>> removeSilentE("pwn")
+   'pwn'
+   >>> removeSilentE("pwned")
+   'pwned'
+   >>> removeSilentE("pone")
+   'pon'
+   >>> removeSilentE("role")
+   'rol'
+   >>> removeSilentE("We")
+   'We'
+   >>> removeSilentE("hold")
+   'hold'
+   >>> removeSilentE("these")
+   'thes'
+   >>> removeSilentE("be")
+   'be'
+   >>> removeSilentE("self")
+   'self'
+   >>> removeSilentE("defenestrate")
+   'defenestrat'
+   >>> removeSilentE("independence")
+   'independenc'
+
+Next up, tests where our heuristic does the wrong thing.  If you can
+come up with a better heuristic---one that passes the tests above, but
+passes these tests when we replace the non-silent e's below
+(i.e. removeSilentE('castle') produces 'castle', ] then you are a
+star---a genius progammer!  (Note that just putting in special cases
+for these four words doesn't count---you need to come up with a
+"general rule" that works for all situations like this---perhaps
+something dealing with words that have a consonant, then an l, then an e?
+                     
+   >>> removeSilentE("castle")
+   'castl'
+   >>> removeSilentE("muscle")
+   'muscl'
+   >>> removeSilentE("chronicle")
+   'chronicl'
+   >>> removeSilentE("people")
+   'peopl'
+                     
+
+If we pass in something other than a string to removeSilentE, it should return False
+
+       >>> removeSilentE(0)
+       False
+       >>> removeSilentE(['a'])
+       False
+
+
+
+Tests for syllableHelper:
+
+   >>> syllableHelper("")
+   ''
+   >>> syllableHelper("Guards")
+   'Gards'
+   >>> syllableHelper("people")
+   'papla'
+   >>> syllableHelper("fruition")
+   'fratan'
+   >>> syllableHelper("Gauchos")
+   'Gachas'
+   >>> syllableHelper("by")
+   'ba'
+   >>> syllableHelper("buy")
+   'ba'
+   >>> syllableHelper("low")
+   'law'
+   >>> syllableHelper("Audry")
+   'adra'
+   >>>
+
+Error Cases for syllableHelper
+          
+   >>> syllableHelper(0)
+   False
+   >>> syllableHelper(['a'])
+   False
+   >>>

@@ -1,0 +1,49 @@
+   >>> from lab08Funcs import *
+
+Tests for removeEdWhenNotASyllable
+                 
+   >>> removeEdWhenNotASyllable('')
+   ''
+   >>> removeEdWhenNotASyllable('pwn')
+   'pwn'
+   >>> removeEdWhenNotASyllable('pwned')
+   'pwned'
+   >>> removeEdWhenNotASyllable('pone')
+   'pone'
+   >>> removeEdWhenNotASyllable('poned')
+   'pon'
+   >>> removeEdWhenNotASyllable('established')
+   'establish'
+   >>> removeEdWhenNotASyllable('by')
+   'by'
+   >>> removeEdWhenNotASyllable('consent')
+   'consent'
+   >>> removeEdWhenNotASyllable('governed')
+   'govern'
+   >>> removeEdWhenNotASyllable('wed')
+   'wed'
+   >>> removeEdWhenNotASyllable('bed')
+   'bed'
+   >>> removeEdWhenNotASyllable('tried')
+   'tried'
+   >>>
+
+Tests that show where the heuristic fails by removing ed when we would rather keep it
+
+   >>> removeEdWhenNotASyllable("embed")
+   'emb'
+   >>> removeEdWhenNotASyllable("created")
+   'creat'
+   >>> removeEdWhenNotASyllable("busted")
+   'bust'
+   >>> removeEdWhenNotASyllable("instituted")
+   'institut'
+   >>> removeEdWhenNotASyllable("connected")
+   'connect'
+
+Tests for bad input
+
+   >>> removeEdWhenNotASyllable(0)
+   False
+   >>> removeEdWhenNotASyllable(['a'])
+   False

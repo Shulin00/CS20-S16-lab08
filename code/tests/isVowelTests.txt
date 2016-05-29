@@ -1,0 +1,77 @@
+   >>> from lab08Funcs import *
+
+Tests for isVowel
+
+lower and uppercase aeiou and y should return True
+
+   >>> isVowel('a')
+   True
+   >>> isVowel('e')
+   True
+   >>> isVowel('i')
+   True
+   >>> isVowel('o')
+   True
+   >>> isVowel('u')
+   True
+   >>> isVowel('y')
+   True
+   >>> isVowel('A')
+   True
+   >>> isVowel('E')
+   True
+   >>> isVowel('I')
+   True
+   >>> isVowel('O')
+   True
+   >>> isVowel('U')
+   True
+   >>> isVowel('Y')
+   True
+   >>>
+
+But single letters other than aeiou and y, upper and lower case,
+should return False
+
+   >>> isVowel('b')
+   False
+   >>> isVowel('c')
+   False
+   >>> isVowel('d')
+   False
+   >>> isVowel('f')
+   False
+   >>> isVowel('g')
+   False
+   >>> isVowel('H')
+   False
+   >>> isVowel('J')
+   False
+   >>> isVowel('K')
+   False
+   >>> isVowel('!')
+   False
+   >>> isVowel(' ')
+   False
+   >>> isVowel('?')
+   False
+   >>> isVowel('*')
+   False
+   >>>
+
+But strings of length zero or greater than 1, and things that are not strings should return 'error'
+
+     >>> isVowel('')
+     'error'
+     >>> isVowel('aa')
+     'error'
+     >>> isVowel('ab')
+     'error'
+     >>> isVowel('ab')
+     'error'
+     >>> isVowel(0)
+     'error'
+     >>> isVowel(['a'])
+     'error'
+     >>>
+

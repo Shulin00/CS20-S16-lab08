@@ -1,0 +1,90 @@
+   >>> from lab08Funcs import *
+
+Tests for countSyllables
+
+   >>> countSyllables("")
+   0
+   >>> countSyllables("pwned")
+   1
+   >>> countSyllables("pone")
+   1
+   >>> countSyllables("poned")
+   1
+   >>>
+                             
+   >>> countSyllables("We")
+   1
+   >>> countSyllables("hold")
+   1
+   >>> countSyllables("these")
+   1
+   >>> countSyllables("truths")
+   1
+   >>> countSyllables("to")
+   1
+   >>> countSyllables("be")
+   1
+   >>> countSyllables("self")
+   1
+   >>> countSyllables("evident")
+   3
+   >>> countSyllables("equal")
+   2
+   >>> countSyllables("endowed")
+   2
+   >>> countSyllables("secure")
+   2
+   >>> countSyllables("governments")
+   3
+   >>> countSyllables("among")
+   2
+   >>> countSyllables("deriving")
+   3
+   >>> countSyllables("established")
+   3
+   >>> countSyllables("by")
+   1
+   >>> countSyllables("consent")
+   2
+   >>> countSyllables("governed")
+   2
+   >>> countSyllables("wed")
+   1
+   >>> countSyllables("bed")
+   1
+   >>> countSyllables("tried")
+   1
+   >>>
+                 
+# Examples where the heuristic fails to produce the correct answer
+
+   >>> countSyllables("pwn")    # should be 1
+   0
+   >>> countSyllables("embed")  # should be 2
+   1
+   >>> countSyllables("created")  # should be 3
+   1
+   >>> countSyllables("busted")   # should be 2
+   1
+   >>> countSyllables("instituted") # should be 4
+   3
+   >>> countSyllables("creator")   # should be 3
+   2
+   >>> countSyllables("alien")   # should be 3
+   2
+   >>> countSyllables("unalienable")  # should be 6
+   4
+   >>> countSyllables("likely")   # should be 2
+   3
+   >>> countSyllables("States")   # should be 1
+   2
+   >>>
+
+Error cases for countSyllabes
+
+   >>> countSyllables(0)
+   False
+   >>> countSyllables(['a'])
+   False
+                 
+
