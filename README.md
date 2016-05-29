@@ -1,5 +1,5 @@
 Goals for this lab
-==================
+
 
 This lab provides practice in writing functions on Python lists to:
 
@@ -9,7 +9,7 @@ This lab provides practice in writing functions on Python lists to:
 This exercise also provides practice with writing functions that use Boolean logic, and with using functions you've already defined to make new functions.
 
 What you'll be doing: a heuristic for syllable counting
-=======================================================
+
 
 Many word processing programs (e.g. Microsoft Word) have tools built in that determine the "reading level" of a piece of text. This is important for choosing reading assignments in K-12 education, and for things like determining whether a ballot initiative can be understood by the average California voter.
 
@@ -40,7 +40,7 @@ If you want to experiment with additional heuristics, just for fun as a challeng
 Note that working on additional heuristics for the spelling problem, while not required for this exercise, is an excellent way to study for the exam. Just like with swimming or playing the guitar, the more you do it, the better you will get at it. What we are learning in this class is not primarily a collect of facts, but a new way of thinking, and you need to practice that way of thinking to improve.
 
 Step by Step Instructions
-=========================
+
 
 Step 0: Getting Started
 -----------------------
