@@ -14,7 +14,7 @@ def noConsecDups(theList):
     if theList is not a string or list then return theList back unchanged
     """
 
-    # return -1 stub
+    
 
     if (type(theList) not in [str,list]):
         return theList    
@@ -24,23 +24,22 @@ def noConsecDups(theList):
        return theList
     # Now we know that the list has a least two elements.
 
-    # @@@ FINISH THIS FUNCTION THEN REMOVE THE return "stub" comment
-    # @@@ and these @@@ comments 
-    # @@@ HINT: Initialize a variable called
-    # @@@ result with list[0:1].   That will be a string or list
-    # @@@ depending on which one was passed in.
-    # @@@
-    # @@@ Then use a for loop that uses an index i that goes from 1 to
-    # @@@ the end of the list.  Accumulate the result by appending only
-    # @@@ elements that don't match the last value added to  result (i.e.
-    # @@@ the "last" element in the result list accumulated so far.
-    # @@@ When you select out element i to accumulate, 
-    # @@@     instead of:  result = result + [theList[i]], use
-    # @@@     use:         result = result + theList[i:i+1]
-    # @@@  Reason: that works for both lists and strings.
 
-    return "stub"
+    else:
+        result=theList[0:1]
+        i = 1
+        le=len(theList)
 
+        for i in range(1,le-1):
+            if theList[i-1]!=theList[i]:
+                result=result+theList[i:i+1]
+                    
+            else:
+                i = i+1
+        if theList[le-2]!=theList[le-1]:
+             result += theList[len(theList)-1:len(theList)]
+    word=result
+    return word
 def isVowel(letter):
    """
    isVowel checks whether a given letter is a vowel.  For purposes of this
@@ -50,11 +49,25 @@ def isVowel(letter):
    return True, if the letter is a vowel, otherwise False
    """
               
-   return "stub"  # this is a stub for testing the test cases
+   if type(letter)!=str or len(letter)!=1:
+       return 'error'
+   
+   List=['a','e','i','o','u','y','A','E','I','O','U','Y']
+   L=len(List)
+   i=0
+   if letter==List[i]:
+       return True
+   for i in range(0,L-1):
+   
+       if letter!=List[i]:
+           i=i+1
+           while letter==List[i]:
+               
+               return True
+   else:
+       return False
 
-   # @@@ REPLACE THE STUB WITH A CORRECT FUNCTION SO THAT THE TEST CASES PASS
-   # @@@ HINTS:
-   # @@@  You need to check both the type and the length 
+    
 
 
 def countVowels(word):
@@ -65,14 +78,23 @@ def countVowels(word):
    otherwise return number of vowels in word
    Note: the empty string is legal, and should produce the answer 0
    """
-              
-   return "stub"  # a stub for testing the tests
+   if type(word)!=str:
+       return False
+   List=['a','e','i','o','u','y','A','E','I','O','U','Y']
+   I=len(word)
+   i=0
+   num=''
+   J=len(List)
+   j=0
+   for i in range(0,I):
+       for j in range(0,J-1):
+           if word[i]==List[j]:
+               num+=word[i]
+           else:
+               j=j+1
+   return len(num)
+       
 
-   # @@@ REPLACE THE STUB WITH A CORRECT FUNCTION SO THAT THE TEST CASES PASS
-   # @@@ HINTS:
-   # @@@  (1) You can use the accumulator pattern to count the vowels
-   # @@@  (2) This is example of counting items in a list, so look back
-   # @@@      at functions like countOdd() or countEven() for hints.
 
 
 
@@ -93,11 +115,30 @@ def allVowelsA(word):
        allVowelsA("fruition") produces "fraataan"
      Note: empty string is legal, and should return empty string
     """              
-    return -1 # stub value
+    if type(word)!=str:
+       return False
+    List=['a','e','i','o','u','y','A','E','I','O','U','Y']
+    I=len(word)
+    J=len(List)
+    j=0
+    i=0
+    lista=list(word)
+    
+    
+    for i in range(0,I):
+        for j in range(0,J-1):
+        
+            if word[i]==List[j]:
+                lista[i]='a'
 
-   # @@@ FINISH THIS FUNCTION!
-   # @@@ This can be done with a for loop that accumulates the result
-
+                word=''.join(lista)
+                
+            else:
+                j=j+1
+        
+    return word
+ 
+    
 
 
 def syllableHelper(word):
@@ -116,34 +157,40 @@ def syllableHelper(word):
     #   syllableHelper("fruition") produces "fratan"
     # Note: empty string is legal, and should return empty string
     """
-    return -1 # stub value
+    if type(word)!=str:
+       return False
+    if word=='':
+        return ''
+    List=['a','e','i','o','u','y','A','E','I','O','U','Y']
+    I=len(word)
+    J=len(List)
+    j=0
+    i=0
+    lista=list(word)
+    result=''
+    
+    for i in range(0,I):
+        for j in range(0,J-1):
+        
+            if word[i]==List[j]:
+                lista[i]='a'
 
-
-
-
-# @@@ FINISH THIS FUNCTION!
-# @@@ Hint: consider reusing the functions you've already written.
-# @@@ This can be a one line function if you see the trick.
-# @@@ You may need to pass the result of one function into another function.
-
-# removeSilentE is an example of a "heuristic".  A heuristic is an approach to
-#   a problem that is not perfect, not guaranteed to succeed, but is still
-#   useful.
-# We want to remove silent e from the ends of words in English.  We'll use this approach:
-#    (1) Let "howMany" be the number of 'a's in the word after it has been
-#        processed by the syllableHelper function.
-#    (2) If the original word now ends in 'e', and howMany is >= 2,
-#        then, return the original word without the 'e' in place.
-#    (3) Otherwise, return the word unchanged.
-# These rules work for many words, such as "rule", "take", and "defenestrate"--we'll remove the silent
-#  'e' from these words.  The rule also works for 'be', 'we', 'the', where the final e should
-#  NOT be removed.  Some words where this rule fails are  "castle", "chronicle", "muscle"
-#  The idea of a heuristic is that exceptions like these
-#  are rare, so the rule is still pretty good.    Problem solving is often a matter of
-#  starting with a "pretty good heuristic", and sucessively refining it.  (Can you think of an
-#  improved rule that handles the words "castle", "chronicle" and "muscle" as well?)
+                word=''.join(lista)
                 
-            
+            else:
+                j=j+1
+    for k in range(0,I):
+        if word[k-1]!=word[k]:
+            result+=word[k]
+    if word[0]=='a' and result[0]!='a':
+        result=word[0]+result
+                  
+    return result
+    
+
+
+
+
 def removeSilentE(word):
     """
     parameter "word" should be a string---otherwise return boolean value False
@@ -151,27 +198,24 @@ def removeSilentE(word):
       in the comment above.
     Note: the empty string is legal, and should produce the answer '' (empty string)
     """
+    if type(word)!=str:
+        return False
+    result=syllableHelper(word)
+    I=len(result)
+    num=''
+    for i in range(0,I):
+        if result[i]=='a':
+            num+=result[i]
+    howmany=len(num)
+    J=len(word)
+    if howmany>=2 and word[J-1]=='e':
+        word=word[0:J-1]
+    
                  
-    return -1  # a stub for testing the tests
+    return word
 
 
-  
-# removeEdWhenNotASyllable is another example of a "heuristic".
-# In order to be able to count syllables, we want to 
-# remove ed from the ends of words in English such as "owned","phoned",
-#   "rehearsed" and "goverened" when it doesn't add an extra syllable.
-# We don't want to remove it from
-#   words like "wed","cred", "bed", "tried"
-# We'll use a similar approach to removeSilentE:
-#    (1) Let "howMany" be the number of 'a's in the word after it has been
-#        processed by the syllableHelper function.
-#    (2) If the original word now ends in 'ed', and howMany is >= 2,
-#        then, return the original word without the 'ed' in place.
-#    (3) Otherwise, return the word unchanged.
-# Words where this heuristic fails are "busted", "instituted", "embed"
-# Can you think of an improvement to the heurisitc that handles those cases?
-
-            
+       
 def removeEdWhenNotASyllable(word):
     """
     word should be a string---otherwise return boolean value False
@@ -180,9 +224,22 @@ def removeEdWhenNotASyllable(word):
     Note: the empty string is legal, and should produce the answer '' (empty string)
     """
                  
-    return -1  # a stub for testing the tests
-
-
+    if type(word)!=str:
+        return False
+    result=syllableHelper(word)
+    
+    I=len(result)
+    num=''
+    for i in range(0,I):
+        if result[i]=='a':
+            num+=result[i]
+    howmany=len(num)
+    J=len(word)
+    if howmany>=2 and word[J-2:J]=='ed':
+        word=word[0:J-2]
+    
+                 
+    return word
 # countSyllables is a final example of a heuristic
 # The theory is that the number of vowels in a word is a good indicator of the number of syllables
 # in the word, if we (a) remove silent e, (b) remove final ed when it doesn't create a new syllable
@@ -204,13 +261,27 @@ def removeEdWhenNotASyllable(word):
                 
                  
 def countSyllables(word):
-     """
-     word should be a string---otherwise, return False
-     as long a word is a string, return an integer,
-       our best guess at the number of syllables in word, using the heuristic above
-     Note: the empty string is legal, and should produce the answer 0
-     """
+    if type(word)!=str:
+        return False
+    eword=removeSilentE(word)
+    edword=removeEdWhenNotASyllable(eword)
+    single=syllableHelper(edword)
+    
+    List=['a','e','i','o','u','y','A','E','I','O','U','Y']
+    I=len(single)
+    J=len(List)
+    j=0
+    i=0
+    num=''
+    for i in range(0,I):
+        for j in range(0,J-1):
+            if single[i]==List[j]:
+                num+=single[i]
+            else:j=j+1
+    
+    return len(num)
+
                  
-     return "stub"  # a stub for testing the tests
+     
 
 
